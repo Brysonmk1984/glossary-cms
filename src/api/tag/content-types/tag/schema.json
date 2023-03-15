@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags",
+  "info": {
+    "singularName": "tag",
+    "pluralName": "tags",
+    "displayName": "tag",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "uid",
+      "required": true,
+      "targetField": "tag"
+    },
+    "tag": {
+      "type": "string",
+      "unique": true,
+      "default": "Digital Surveillance",
+      "required": true,
+      "regex": "^[a-z0-9 ]*$"
+    },
+    "definitions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::definition.definition",
+      "inversedBy": "tags"
+    }
+  }
+}

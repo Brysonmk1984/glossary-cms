@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "definitions",
+  "info": {
+    "singularName": "definition",
+    "pluralName": "definitions",
+    "displayName": "definition",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "entry": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "link": {
+      "type": "string"
+    },
+    "advanced_description": {
+      "type": "text"
+    },
+    "author": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "required": true,
+      "targetField": "entry"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "mappedBy": "definitions"
+    }
+  }
+}
